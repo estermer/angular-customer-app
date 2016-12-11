@@ -5,7 +5,7 @@
 
     function customerList(){
       return {
-        templateUrl: '../partials/customer-list.html',
+        templateUrl: '/partials/customer-list.html',
         restrict: 'E'
       };
     }
