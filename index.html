@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="customer-app">
   <head>
     <meta charset="utf-8">
     <title>Customer App</title>
@@ -9,12 +9,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <!-- MODULE -->
-    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/customers.module.js" charset="utf-8"></script>
+    <!-- DIRECTIVES -->
+    <script src="directives/customer-list.directive.js" charset="utf-8"></script>
     <!-- CONTROLLERS -->
-    <script src="controllers/customers.js" charset="utf-8"></script>
+    <script src="controllers/customers.controller.js" charset="utf-8"></script>
 
   </head>
-  <body>
-
+  <body ng-controller="CustomerController as customerCtrl">
+    <customer-list></customer-list>
   </body>
 </html>

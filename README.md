@@ -36,3 +36,10 @@ JSON data for this app can be found at [myjson here](https://api.myjson.com/bins
 ```
 
 Used the [AngularJS Styling guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md) to write code according to best practice.
+
+### User Stories
+
+This is a single page application
+```text
+
+```
