@@ -26,8 +26,13 @@ mongoose.connect(mongoURI);
 mongoose.Promise = global.Promise;
 ///********///
 
+
+
+
+///SERVER///
 app.listen(process.env.PORT || 3000, function(){
   console.log('=============================');
   console.log('SERVER CONNECTED TO PORT 3000');
   console.log('=============================');
 });
+///********///
