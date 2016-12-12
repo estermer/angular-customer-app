@@ -37,9 +37,21 @@ JSON data for this app can be found at [myjson here](https://api.myjson.com/bins
 
 Used the [AngularJS Styling guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md) to write code according to best practice.
 
-### User Stories
+# Running the application
 
-This is a single page application
-```text
+This angular application uses custom directives with templateUrl's and needs to be run
+on a server in order to get around the CORS restrictions.
 
-```
+To do so, we you need to install the node package `http-server`.
+
+run `npm install http-server` (if your on linux you may need to install with `sudo`).
+
+next clone this repository to your local machine.
+
+Then run `http-server *PATH*`
+
+with `*PATH*` being your the full path to the repository's folder.
+
+ex: `http-server /Desktop/programming/angular-customer-app/`
+
+This should run the application on a local server.
