@@ -12,7 +12,7 @@
     getCustomerList();
 
     $scope.getCustomerInfo = getCustomerInfo;
-    $scope.returnToList = returnToList;
+    $scope.getCustomerList = getCustomerList;
     $scope.deleteCustomer = deleteCustomer;
     $scope.editCustomer = editCustomer;
     $scope.createCustomer = createCustomer;
@@ -27,13 +27,9 @@
     }
 
     function createCustomer(customer){
-
-    }
-
-    function returnToList(){
-      $scope.isShow = false;
-      $scope.isEdit = false;
-      getCustomerList();
+      console.log(JSON.stringify(customer));
+      $scope.customerList.unshift(customer);
+      updateJSON();
     }
 
     function getCustomerInfo(customer){
@@ -44,9 +40,10 @@
     }
 
     function updateJSON(){
-      $http.put(jsonURL, {
-        customers: $scope.customers
-      })
+      console.log("Updating json file");
+      $http.put(jsonURL, JSON.stringify({
+        customers: $scope.customerList
+      }))
         .then(receiveList)
         .catch(catchError);
     }
@@ -60,6 +57,8 @@
     function receiveList(response){
       $scope.customerList = response.data.customers;
       $scope.isList = true;
+      $scope.isShow = false;
+      $scope.isEdit = false;
       console.log(response.data.customers);
     }
 
