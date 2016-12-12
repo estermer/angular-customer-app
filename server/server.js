@@ -7,6 +7,10 @@ var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 ///********///
 
+///EXTERNAL FILES///
+var Customer = require('./models/customer-model.js');
+///**************///
+
 ///EXPRESS CONFIG///
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
