@@ -17,7 +17,7 @@
 
   </head>
   <body ng-controller="CustomerController as customerCtrl">
-    <customer-list ng-if="!customerInfo"></customer-list>
-    <customer ng-if="customerInfo"></customer>
+    <customer-list ng-if="isList"></customer-list>
+    <customer ng-if="isShow"></customer>
   </body>
 </html>

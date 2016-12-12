@@ -13,14 +13,42 @@
 
     $scope.getCustomerInfo = getCustomerInfo;
     $scope.returnToList = returnToList;
+    $scope.deleteCustomer = deleteCustomer;
+    $scope.editCustomer = editCustomer;
+    $scope.createCustomer = createCustomer;
+
+
+    function deleteCustomer(customer){
+
+    }
+
+    function editCustomer(customer){
+
+    }
+
+    function createCustomer(customer){
+
+    }
 
     function returnToList(){
-      $scope.customerInfo = null;
+      $scope.isShow = false;
+      $scope.isEdit = false;
+      getCustomerList();
     }
 
     function getCustomerInfo(customer){
       $scope.customerInfo = customer;
-      console.log("works");
+      $scope.isShow = true;
+      $scope.isEdit = false;
+      $scope.isList = false;
+    }
+
+    function updateJSON(){
+      $http.put(jsonURL, {
+        customers: $scope.customers
+      })
+        .then(receiveList)
+        .catch(catchError);
     }
 
     function getCustomerList(){
@@ -31,6 +59,7 @@
 
     function receiveList(response){
       $scope.customerList = response.data.customers;
+      $scope.isList = true;
       console.log(response.data.customers);
     }
 

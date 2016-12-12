@@ -1,0 +1,18 @@
+<form ng-submit="createCustomer(customer)">
+  <label for="name">Name:</label>
+  <input type="test" name="name" ng-model="customer.name"><br>
+  <label for="phone">Phone:</label>
+  <input type="test" name="phone" ng-model="customer.telephone"><br>
+  <label for="email">E-mail:</label>
+  <input type="test" name="email" ng-model="customer.email"><br>
+  <label>Address:</label>
+  <label for="street">Street:</label>
+  <input type="test" name="street" ng-model="customer.address.street"><br>
+  <label for="city">City:</label>
+  <input type="test" name="city" ng-model="customer.address.city"><br>
+  <label for="state">State:</label>
+  <input type="test" name="state" ng-model="customer.address.state"><br>
+  <label for="zip">Zip:</label>
+  <input type="test" name="zip" ng-model="customer.address.zip"><br>
+  <input type="submit" name="create" value="Create Customer">
+</form>
