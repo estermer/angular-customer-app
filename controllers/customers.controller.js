@@ -11,15 +11,27 @@
 
     getCustomerList();
 
+    $scope.getCustomerInfo = getCustomerInfo;
+    $scope.returnToList = returnToList;
+
+    function returnToList(){
+      $scope.customerInfo = null;
+    }
+
+    function getCustomerInfo(customer){
+      $scope.customerInfo = customer;
+      console.log("works");
+    }
+
     function getCustomerList(){
       $http.get(jsonURL)
         .then(receiveList)
         .catch(catchError);
+    }
 
-      function receiveList(response){
-        $scope.customerList = response.data.customers;
-        console.log(response.data.customers);
-      }
+    function receiveList(response){
+      $scope.customerList = response.data.customers;
+      console.log(response.data.customers);
     }
 
     function catchError(err) {

@@ -1,0 +1,13 @@
+<button ng-click="returnToList()"> << Go Back</button>
+<div class="customer">
+  <h1>{{customerInfo.name}}</h1>
+  <p>
+    Phone: {{customerInfo.telephone}}
+  </p>
+  <p>
+    E-mail: {{customerInfo.email}}
+  </p>
+  <p>
+    Address: {{customerInfo.address.street}} {{customerInfo.address.city}}, {{customerInfo.address.state}} {{customerInfo.address.zip}}
+  </p>
+</div>

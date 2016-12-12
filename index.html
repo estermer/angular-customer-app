@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
     <!-- ANGULAR -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script> -->
     <!-- MODULE -->
     <script src="js/customers.module.js" charset="utf-8"></script>
-    <!-- DIRECTIVES -->
-    <script src="directives/customer-list.directive.js" charset="utf-8"></script>
     <!-- CONTROLLERS -->
     <script src="controllers/customers.controller.js" charset="utf-8"></script>
+    <!-- DIRECTIVES -->
+    <script src="directives/customer-list.directive.js" charset="utf-8"></script>
+    <script src="directives/customer.directive.js" charset="utf-8"></script>
 
   </head>
   <body ng-controller="CustomerController as customerCtrl">
-    <customer-list></customer-list>
+    <customer-list ng-if="!customerInfo"></customer-list>
+    <customer ng-if="customerInfo"></customer>
   </body>
 </html>
