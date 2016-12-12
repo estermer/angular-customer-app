@@ -26,11 +26,31 @@ mongoose.connect(mongoURI);
 mongoose.Promise = global.Promise;
 ///********///
 
+app.get('/customers', (req, res) => {
+  Customer.find({}, (err, users) => {
+    if(err) console.log(err);
+    return users;
+  })
+  .then((users) => {
+    res.json(users);
+  });
+});
 
+app.post('/customers', (req, res) => {
+
+});
+
+app.put('/customers/:id', (req, res) => {
+
+});
+
+app.delete('/customers/:id', (req, res) => {
+
+});
 
 
 ///SERVER///
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, () => {
   console.log('=============================');
   console.log('SERVER CONNECTED TO PORT 3000');
   console.log('=============================');
