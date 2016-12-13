@@ -7,7 +7,7 @@
 
   function CustomerController($http, $scope) {
 
-    var jsonURL = 'http://localhost:3000/customers';
+    var jsonURL = 'https://stermer-customer-app.herokuapp.com/customers'; //'http://localhost:3000/customers';
 
     getCustomerList();
 
