@@ -1,8 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #505c70;
-  color: #71e08b;
+  color: #505c70;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Rubik One', sans-serif;
 }
 
 .container {
@@ -11,6 +15,12 @@ html, body {
   padding-top: 150px;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
+}
+
+button, [name="submit"] {
+  font-family: 'Rubik One', sans-serif;
+  background-color: #505c70;
+  color: #71e08b;
 }
