@@ -34,3 +34,7 @@ button, [name="create"], [name="edit"] {
   background-color: #505c70;
   color: #71e08b;
 }
+
+button:hover, [name="create"]:hover, [name="edit"]:hover, li:hover {
+  cursor: pointer;
+}
