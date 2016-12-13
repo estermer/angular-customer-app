@@ -1,4 +1,4 @@
 <h1>Customers: </h1>
-<div class="customer-list" ng-repeat="customer in customerList">
-    <h3 ng-click="getCustomerInfo(customer)">{{customer.name}}</h3>
-</div>
+<ul class="customer-list" ng-repeat="customer in customerList">
+    <li ng-click="getCustomerInfo(customer)">{{customer.name}}</li>
+</ul>
