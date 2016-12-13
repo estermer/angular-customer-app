@@ -19,13 +19,13 @@
 
   </head>
   <body ng-controller="CustomerController as customerCtrl">
-    <div class="container">
-      <create-customer ng-if="isList"></create-customer>
-      <customer-list ng-if="isList"></customer-list>
+    <div class="container" ng-if="isList">
+      <create-customer></create-customer>
+      <customer-list></customer-list>
     </div>
-    <div class="container">
-      <edit-customer ng-if="isShow"></edit-customer>
-      <customer ng-if="isShow"></customer>
+    <div class="container" ng-if="isShow">
+      <edit-customer></edit-customer>
+      <customer></customer>
     </div>
   </body>
 </html>
