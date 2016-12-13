@@ -19,7 +19,7 @@ h1, h2, h3 {
   align-content: center;
 }
 
-button, [name="submit"] {
+button, [name="create"], [name="edit"] {
   font-family: 'Rubik One', sans-serif;
   background-color: #505c70;
   color: #71e08b;
