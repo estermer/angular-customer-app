@@ -5,6 +5,15 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 h1, h2, h3 {
   font-family: 'Rubik One', sans-serif;
 }
@@ -12,7 +21,7 @@ h1, h2, h3 {
 .container {
   width: 75%;
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: 80px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
