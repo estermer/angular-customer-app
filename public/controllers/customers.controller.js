@@ -25,7 +25,8 @@
     }
 
     function editCustomer(customer){
-      $http.put(`${jsonURL}/${customer._id}`, customer)
+      console.log("Customer to Edit >>>>>>", customer);
+      $http.put(`${jsonURL}/${$scope.customerInfo._id}`, customer)
         .then(receiveResponse)
         .catch(catchError);
     }

@@ -15,11 +15,13 @@
     <script src="directives/customer-list.directive.js" charset="utf-8"></script>
     <script src="directives/customer.directive.js" charset="utf-8"></script>
     <script src="directives/create-customer.directive.js" charset="utf-8"></script>
+    <script src="directives/edit-customer.directive.js" charset="utf-8"></script>
 
   </head>
   <body ng-controller="CustomerController as customerCtrl">
-    <create-customer></create-customer>
+    <create-customer ng-if="isList"></create-customer>
     <customer-list ng-if="isList"></customer-list>
+    <edit-customer ng-if="isShow"></edit-customer>
     <customer ng-if="isShow"></customer>
   </body>
 </html>
