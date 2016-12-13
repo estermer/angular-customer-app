@@ -8,6 +8,7 @@ html, body {
 .container {
   width: 75%;
   margin: 0 auto;
+  padding-top: 150px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
