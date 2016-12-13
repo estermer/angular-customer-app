@@ -1,6 +1,6 @@
-<button ng-click="getCustomerList()"> << Go Back</button>
+<button ng-click="getCustomerList()"> << GO BACK</button>
 <div class="customer">
-  <h1>{{customerInfo.name}}</h1>
+  <h1>{{customerInfo.name.toUpperCase()}}</h1>
   <p>
     Phone: {{customerInfo.telephone}}
   </p>
@@ -11,4 +11,4 @@
     Address: {{customerInfo.address.street}} {{customerInfo.address.city}}, {{customerInfo.address.state}} {{customerInfo.address.zip}}
   </p>
 </div>
-<button ng-click="deleteCustomer(customerInfo)">Delete</button>
+<button ng-click="deleteCustomer(customerInfo)">DELETE</button>
