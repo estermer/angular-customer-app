@@ -1,6 +1,7 @@
 ///MODULES///
 var express = require('express');
 var app = express();
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
@@ -18,6 +19,7 @@ app.use( bodyParser.json() );    // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({  // to support URL-encoded bodies
   extended: true
 }));
+app.use(cors());
 ///***********///
 
 ///MONGOOSE///
@@ -27,17 +29,29 @@ mongoose.Promise = global.Promise;
 ///********///
 
 app.get('/customers', (req, res) => {
-  Customer.find({}, (err, users) => {
+  Customer.find({}, (err, customers) => {
     if(err) console.log(err);
-    return users;
+    console.log("Customers >>>>>>>", customers);
+    return customers;
   })
-  .then((users) => {
-    res.json(users);
+  .then((customers) => {
+    res.json(customers);
   });
 });
 
 app.post('/customers', (req, res) => {
+  var customer = new Customer(req.body);
 
+  customer.save((err, customer) => {
+    if(err) console.log(err);
+    console.log("Customer Created >>>>>>", customer);
+    res.json(customer);
+  });
+
+  // Customer.find({}, (err, customers) => {
+  //   if(err) console.log(err);
+  //   console.log("Customers >>>>>>>",customers);
+  // });
 });
 
 app.put('/customers/:id', (req, res) => {

@@ -15,7 +15,7 @@
     $scope.getCustomerList = getCustomerList;
     $scope.deleteCustomer = deleteCustomer;
     $scope.editCustomer = editCustomer;
-    // $scope.createCustomer = createCustomer;
+    $scope.createCustomer = createCustomer;
 
 
     function deleteCustomer(customer){
@@ -26,11 +26,11 @@
 
     }
 
-    // function createCustomer(customer){
-    //   console.log(JSON.stringify(customer));
-    //   $scope.customerList.unshift(customer);
-    //   updateJSON();
-    // }
+    function createCustomer(customer){
+      $http.post(jsonURL, customer)
+        .then(receiveCustomer)
+        .catch(catchError);
+    }
 
     function getCustomerInfo(customer){
       $scope.customerInfo = customer;
@@ -39,19 +39,18 @@
       $scope.isList = false;
     }
 
-    // function updateCustomer(){
-    //   console.log("Updating json file");
-    //   $http.put(jsonURL, JSON.stringify({
-    //     customers: $scope.customerList
-    //   }))
-    //     .then(receiveList)
-    //     .catch(catchError);
-    // }
-
     function getCustomerList(){
       $http.get(jsonURL)
         .then(receiveList)
         .catch(catchError);
+    }
+
+    function receiveCustomer(response){
+      console.log("Added New Customer >>>>>", response.data);
+      $scope.isList = true;
+      $scope.isShow = false;
+      $scope.isEdit = false;
+      $scope.customerList.push(response.data);
     }
 
     function receiveList(response){
@@ -59,7 +58,7 @@
       $scope.isList = true;
       $scope.isShow = false;
       $scope.isEdit = false;
-      console.log(response.data);
+      console.log("Customer List >>>>>", response.data);
     }
 
     function catchError(err) {
