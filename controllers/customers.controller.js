@@ -19,16 +19,26 @@
 
 
     function deleteCustomer(customer){
-
+      $http.delete(`${jsonURL}/${customer._id}`)
+        .then(receiveResponse)
+        .catch(catchError);
     }
 
     function editCustomer(customer){
-
+      $http.put(`${jsonURL}/${customer._id}`, customer)
+        .then(receiveResponse)
+        .catch(catchError);
     }
 
     function createCustomer(customer){
       $http.post(jsonURL, customer)
-        .then(receiveCustomer)
+        .then(receiveResponse)
+        .catch(catchError);
+    }
+
+    function getCustomerList(){
+      $http.get(jsonURL)
+        .then(receiveList)
         .catch(catchError);
     }
 
@@ -39,18 +49,12 @@
       $scope.isList = false;
     }
 
-    function getCustomerList(){
-      $http.get(jsonURL)
-        .then(receiveList)
-        .catch(catchError);
-    }
-
-    function receiveCustomer(response){
-      console.log("Added New Customer >>>>>", response.data);
+    function receiveResponse(response){
+      console.log("Response From Server >>>>>", response.data);
       $scope.isList = true;
       $scope.isShow = false;
       $scope.isEdit = false;
-      $scope.customerList.push(response.data);
+      getCustomerList();
     }
 
     function receiveList(response){

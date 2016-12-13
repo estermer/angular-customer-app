@@ -47,19 +47,22 @@ app.post('/customers', (req, res) => {
     console.log("Customer Created >>>>>>", customer);
     res.json(customer);
   });
-
-  // Customer.find({}, (err, customers) => {
-  //   if(err) console.log(err);
-  //   console.log("Customers >>>>>>>",customers);
-  // });
 });
 
 app.put('/customers/:id', (req, res) => {
-
+  Customer.findOneAndUpdate({"_id": req.params.id}, req.body, (err, customer) => {
+    if(err) console.log(err);
+    console.log("Customer Updated >>>>", customer);
+    res.json(customer);
+  });
 });
 
 app.delete('/customers/:id', (req, res) => {
-
+  Customer.findByIdAndRemove(req.params.id, (err, customer) => {
+    if(err) console.log(err);
+    console.log("Customer Deleted >>>>", customer);
+    res.json(customer);
+  });
 });
 
 
